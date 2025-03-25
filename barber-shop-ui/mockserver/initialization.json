@@ -1,0 +1,16 @@
+{
+  "mockServer": {
+    "expectations": [
+      {
+        "httpRequest": {
+          "method": "GET",
+          "path": "/test"
+        },
+        "httpResponse": {
+          "statusCode": 200,
+          "body": "Hello, world!"
+        }
+      }
+    ]
+  }
+}
