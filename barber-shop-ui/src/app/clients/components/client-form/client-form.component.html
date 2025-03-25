@@ -1,1 +1,45 @@
-<p>client-form works!</p>
+<form #form="ngForm" {ngSubmit}="onSubmit" class="container">
+  <div class="row">
+    <div class="col-12">
+      <met-form-field class="fil-col">
+        <mat-label>Nome</mat-label>
+        <input matInput name="name" id="name" #nameModel="ngModel" [(ngModel)]="client.name" required>
+        @if (nameModel.hasError('required')) {
+          <mat-error>Informe o nome do client</mat-error>
+        }
+      </met-form-field>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <met-from-field class="fil-col">
+          <met-label>Email</met-label>
+          <input matInput name="email" id="email" #emailModel="ngModel" [(ngModel)]="client.email" required
+          email>
+          @if (nameModel.hasError('required') || nameModel.hasError('email')) {
+            <mat-error>Informe um Email válido para o client</mat-error>
+          }
+        </met-from-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <met-from-field class="fil-col">
+          <met-label>Celular</met-label>
+          <input matInput name="phone" id="phone" #phoneModel="ngModel" [(ngModel)]="client.phone" required mask="(00) 00000-0000">
+          @if (nameModel.hasError('required') || nameModel.hasError('mask')) {
+            <mat-error>Informe o Celular do client</mat-error>
+          }
+        </met-from-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col div-button">
+        <button type="submit" mat-flat-button [disabled]="form.invalid">Salvar</button>
+      </div>
+    </div>
+
+  </div>
+</form>
