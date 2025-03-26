@@ -1,5 +1,7 @@
 package br.com.dio.barbershop.entity;
 
+import java.time.OffsetDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,10 +32,10 @@ public class ScheduleEntity {
     private long id;
 
     @Column(nullable = false, name = "start_at")
-    private String startAt;
+    private OffsetDateTime startAt;
 
     @Column(nullable = false, name = "end_at")
-    private String endAt;
+    private OffsetDateTime endAt;
 
     @ToString.Exclude
     @ManyToOne
