@@ -16,3 +16,7 @@ services:
       MOCKSERVER_CORS_MAX_AGE_IN_SECONDS: 3600
     volumes:
       - ./mockServer/initialization.json:/config/initialization.json:Z
+  networks:
+    barber-shop-net:
+      name: barber-shop-net
+      external: true
